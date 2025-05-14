@@ -11,8 +11,13 @@ export const AUTH_HEADER = {
 };
 
 export const API = {
+  image: 'https://image.tmdb.org/t/p/original',
   popular: 'movie/popular',
   recommendation: 'movie/299534/recommendations',
+  kidTvShow:
+    'https://api.themoviedb.org/3/discover/tv?with_genres=10762&sort_by=popularity.desc',
+  KidMovie:
+    'https://api.themoviedb.org/3/discover/movie?with_genres=10751&certification_country=US&certification.lte=G&sort_by=popularity.desc',
   koreanMovies:
     'https://api.themoviedb.org/3/discover/movie?with_original_language=ko&sort_by=popularity.desc',
   koreanTvShows:

@@ -1,5 +1,5 @@
 /** @format */
-
+import 'react-native-gesture-handler';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import '@/global.css';
 import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
@@ -62,14 +62,14 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <GluestackUIProvider mode='dark'>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <GluestackUIProvider mode='dark'>
         <Stack
           screenOptions={{ headerShown: false }}
-          initialRouteName='home/index'>
-          <Stack.Screen name='home/index' />
+          initialRouteName='index'>
+          <Stack.Screen name='index' />
         </Stack>
-      </ThemeProvider>
-    </GluestackUIProvider>
+      </GluestackUIProvider>
+    </ThemeProvider>
   );
 }
