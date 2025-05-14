@@ -9,3 +9,18 @@ export const AUTH_HEADER = {
   Authorization: `Bearer ${API_KEY}`,
   'Content-Type': 'application/json',
 };
+
+export const API = {
+  popular: 'movie/popular',
+  recommendation: 'movie/299534/recommendations',
+  koreanMovies:
+    'https://api.themoviedb.org/3/discover/movie?with_original_language=ko&sort_by=popularity.desc',
+  koreanTvShows:
+    'https://api.themoviedb.org/3/discover/tv?with_original_language=ko&sort_by=popularity.desc',
+  PHMovies:
+    'https://api.themoviedb.org/3/discover/movie?with_original_language=tl&region=PH&sort_by=popularity.desc',
+  marvelMovies:
+    'https://api.themoviedb.org/3/discover/movie?with_keywords=180547&sort_by=popularity.desc',
+  marvelTvShows:
+    'https://api.themoviedb.org/3/discover/tv?with_keywords=180547&sort_by=popularity.desc',
+};
