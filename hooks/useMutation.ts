@@ -1,7 +1,7 @@
 /** @format */
 
 import { AUTH_HEADER, BASE_URL } from '@/constants/apiConfig';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 interface MutationResult<T> {
   data: T | null;
@@ -18,7 +18,7 @@ export function useMutation<T = any>(
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const mutate = (body: any) => {
+  const mutate = useCallback((body: any) => {
     setLoading(true);
     setError(null);
 
@@ -36,7 +36,7 @@ export function useMutation<T = any>(
         setError(e.message || 'Mutation failed');
         setLoading(false);
       });
-  };
+  }, []);
 
   return { data, loading, error, mutate };
 }

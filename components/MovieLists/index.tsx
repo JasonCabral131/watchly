@@ -13,7 +13,9 @@ type props = {
   link: string;
 };
 const MovieLists: React.FC<props> = ({ title, link }) => {
-  const { data } = useGetQuery<MovieApiResponse | null>(link);
+  const { data } = useGetQuery<MovieApiResponse | null>(link, {
+    cache: 'no-cache',
+  });
   const router = useRouter();
   return (
     <View className='gap-2 mt-4'>
